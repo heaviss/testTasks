@@ -10,6 +10,7 @@ djangorestframework = "^3.12.4"
 Django = "^3.2.7"
 django-environ = "^0.6.0"
 psycopg2 = "^2.9.1"
+ipython = "^7.27.0"
 
 [tool.poetry.dev-dependencies]
 black = "^21.8b0"
@@ -25,6 +26,7 @@ pytest = "^6.2.5"
 pytest-env = "^0.6.2"
 pytest-mock = "^3.6.1"
 mixer = "^7.1.2"
+pytest-freezegun = "^0.4.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
