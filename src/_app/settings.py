@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+from datetime import timedelta
 
 import environ
 
@@ -151,3 +152,5 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.SessionAuthentication",
     ],
 }
+
+USER_BOOKSTORE_TRIAL_PERIOD_ON_CREATION = timedelta(days=14)
