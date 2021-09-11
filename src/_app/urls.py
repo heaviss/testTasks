@@ -18,13 +18,18 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework.routers import DefaultRouter
 
+from bookstore.api.views import AddUserPaymentView, BookViewSet
 from users.api.views import UserViewSet
 
 router_v1 = DefaultRouter()
 
 router_v1.register("users", UserViewSet)
+router_v1.register("books", BookViewSet)
 
-api_v1 = (path("", include(router_v1.urls)),)
+api_v1 = (
+    path("", include(router_v1.urls)),
+    path("add_user_payment/", AddUserPaymentView.as_view()),
+)
 
 urlpatterns = [
     path("api/v1/", include((api_v1, "api"), namespace="v1")),

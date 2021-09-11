@@ -25,7 +25,7 @@ class User(AbstractUser):
 
         if is_new:
             Subscription = apps.get_model("bookstore.Subscription")
-            Subscription.objects.create(
+            Subscription.objects.get_or_create(
                 user=self,
                 due_date=timezone.now().date()
                 + settings.USER_BOOKSTORE_TRIAL_PERIOD_ON_CREATION,
